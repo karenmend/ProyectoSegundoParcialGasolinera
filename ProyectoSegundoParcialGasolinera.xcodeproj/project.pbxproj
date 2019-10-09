@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D02368F234E8A0900D0F121 /* Autos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02368E234E8A0900D0F121 /* Autos.swift */; };
 		3D023691234E8F6000D0F121 /* CeldaAutosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D023690234E8F6000D0F121 /* CeldaAutosController.swift */; };
+		3D023693234E992600D0F121 /* NuevoAutoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D023692234E992600D0F121 /* NuevoAutoController.swift */; };
 		3D70B06A234D24A1008574FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D70B069234D24A1008574FD /* AppDelegate.swift */; };
 		3D70B06C234D24A1008574FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D70B06B234D24A1008574FD /* ViewController.swift */; };
 		3D70B06F234D24A1008574FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D70B06D234D24A1008574FD /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		3D02368E234E8A0900D0F121 /* Autos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autos.swift; sourceTree = "<group>"; };
 		3D023690234E8F6000D0F121 /* CeldaAutosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAutosController.swift; sourceTree = "<group>"; };
+		3D023692234E992600D0F121 /* NuevoAutoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoAutoController.swift; sourceTree = "<group>"; };
 		3D70B066234D24A0008574FD /* ProyectoSegundoParcialGasolinera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSegundoParcialGasolinera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D70B069234D24A1008574FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D70B06B234D24A1008574FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		3D70B068234D24A0008574FD /* ProyectoSegundoParcialGasolinera */ = {
 			isa = PBXGroup;
 			children = (
+				3D023692234E992600D0F121 /* NuevoAutoController.swift */,
 				3D70B069234D24A1008574FD /* AppDelegate.swift */,
 				3D70B06B234D24A1008574FD /* ViewController.swift */,
 				3D70B06D234D24A1008574FD /* Main.storyboard */,
@@ -266,6 +269,7 @@
 				3D02368F234E8A0900D0F121 /* Autos.swift in Sources */,
 				3D023691234E8F6000D0F121 /* CeldaAutosController.swift in Sources */,
 				3D70B06A234D24A1008574FD /* AppDelegate.swift in Sources */,
+				3D023693234E992600D0F121 /* NuevoAutoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

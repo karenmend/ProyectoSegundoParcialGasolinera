@@ -13,12 +13,13 @@ class ViewController: UIViewController {
     var Autos : [Auto] = []
     
     @IBOutlet weak var tv_Autos: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tv_Autos.dataSource = self
         tv_Autos.delegate = self
         
-       
+       Autos = createArray()
     }
     
     func createArray() -> [Auto]{
@@ -43,13 +44,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let celda = tableView.dequeueReusableCell(withIdentifier: "celdaAutos") as? CeldaAutosController
+        let celda = tableView.dequeueReusableCell(withIdentifier: "celdaAutos") as! CeldaAutosController
         
         let list = Autos[indexPath.row]
         
-        celda?.set(Modelo : list)
+        celda.set(Modelo : list)
         
-        return celda!
+        return celda
     }
     
     

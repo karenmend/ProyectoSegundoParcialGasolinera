@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="150" id="jns-z8-DMZ" userLabel="celdaAutos" customClass="CeldaAutosController" customModule="ProyectoSegundoParcialGasolinera" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celdaAutos" rowHeight="150" id="jns-z8-DMZ" userLabel="celdaAutos" customClass="CeldaAutosController" customModule="ProyectoSegundoParcialGasolinera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jns-z8-DMZ" id="DNd-0q-T26">
@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="-12.053571428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Nuevo Auto Cotroller-->
         <scene sceneID="wTx-9S-wGE">
             <objects>
-                <viewController id="ku8-UR-yI9" sceneMemberID="viewController">
+                <viewController id="ku8-UR-yI9" customClass="NuevoAutoCotroller" customModule="ProyectoSegundoParcialGasolinera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1AP-ES-Juv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,6 +196,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kij-et-nx2">
                                 <rect key="frame" x="338" y="457" width="56" height="30"/>
                                 <state key="normal" title="Guardar"/>
+                                <connections>
+                                    <action selector="doTapGuardar:" destination="ku8-UR-yI9" eventType="touchUpInside" id="vIp-aQ-KFs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,6 +233,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="54o-J4-yfU"/>
                     </view>
+                    <connections>
+                        <outlet property="txt_conductor" destination="GzF-uz-74A" id="3zM-Qr-s13"/>
+                        <outlet property="txt_fabricacion" destination="zXS-fD-mpA" id="jbU-Hj-NGQ"/>
+                        <outlet property="txt_marca" destination="IaG-H5-yWo" id="fJU-8m-qPS"/>
+                        <outlet property="txt_modelo" destination="W9j-gh-ODZ" id="DbJ-P8-CNm"/>
+                        <outlet property="txt_placa" destination="hTw-fO-ZRY" id="kDl-zj-I5e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iV3-Mo-wqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
