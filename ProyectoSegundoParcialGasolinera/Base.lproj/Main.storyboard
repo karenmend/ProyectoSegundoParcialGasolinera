@@ -83,7 +83,7 @@
                                             <outlet property="lbl_fabricacion" destination="S7V-p7-5Mu" id="hls-Gi-i7N"/>
                                             <outlet property="lbl_marca" destination="YV6-kE-J9d" id="LdK-93-Dm1"/>
                                             <outlet property="lbl_placa" destination="dfC-Yi-XjI" id="zZz-rg-wm7"/>
-                                            <segue destination="joN-YZ-ABt" kind="show" id="hJJ-ea-UYT"/>
+                                            <segue destination="joN-YZ-ABt" kind="show" identifier="goToCargas" id="hJJ-ea-UYT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,7 +95,7 @@
                     <navigationItem key="navigationItem" id="PrG-jM-usn">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Aj6-ar-687">
                             <connections>
-                                <segue destination="ku8-UR-yI9" kind="show" id="OgG-Hi-lSH"/>
+                                <segue destination="ku8-UR-yI9" kind="show" identifier="goToNuevoAuto" id="OgG-Hi-lSH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -315,7 +315,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Conductor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og9-KP-dbh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conductor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og9-KP-dbh">
                                                 <rect key="frame" x="20" y="75" width="86" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -408,9 +408,11 @@
                                             <constraint firstItem="txk-3t-Kjn" firstAttribute="top" secondItem="iK5-Pu-sjM" secondAttribute="bottom" constant="8" id="l6w-hg-yt3"/>
                                             <constraint firstItem="E1i-P1-33H" firstAttribute="leading" secondItem="dzL-mO-XMK" secondAttribute="leading" constant="20" id="mTL-YI-yRM"/>
                                             <constraint firstAttribute="trailing" secondItem="y00-dC-5vp" secondAttribute="trailing" constant="20" id="v0B-XW-QzJ"/>
+                                            <constraint firstItem="Og9-KP-dbh" firstAttribute="leading" secondItem="dzL-mO-XMK" secondAttribute="leading" constant="20" id="xfS-PR-4y3"/>
                                             <constraint firstAttribute="bottom" secondItem="y00-dC-5vp" secondAttribute="bottom" constant="14" id="xwg-Rx-78w"/>
                                             <constraint firstItem="iK5-Pu-sjM" firstAttribute="top" secondItem="k9j-hd-tUu" secondAttribute="bottom" constant="8" id="ycu-pZ-ekO"/>
                                             <constraint firstItem="DHh-C0-09M" firstAttribute="leading" secondItem="dzL-mO-XMK" secondAttribute="leading" constant="20" id="zjg-16-9jD"/>
+                                            <constraint firstItem="Og9-KP-dbh" firstAttribute="top" secondItem="QuY-vz-73h" secondAttribute="bottom" constant="8" id="zyy-9A-cet"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -439,12 +441,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvd-IJ-U3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2137.68115942029" y="217.63392857142856"/>
+            <point key="canvasLocation" x="2067" y="623"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="SBl-dt-tlh">
+            <objects>
+                <viewController id="fKE-ZV-RlE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APy-vb-C9V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantidad ($) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w96-vZ-sZK">
+                                <rect key="frame" x="20" y="115" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qt6-DF-lcP">
+                                <rect key="frame" x="20" y="144" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="nIj-vf-DeO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UG-3p-xpM">
+                                <rect key="frame" x="20" y="207" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Wc4-3v-lGl"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Litros (l) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ena-8j-xk7">
+                                <rect key="frame" x="20" y="178" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlR-rn-gVd">
+                                <rect key="frame" x="328" y="245" width="66" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Guardar"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aXP-se-3Oo" firstAttribute="bottom" secondItem="FlR-rn-gVd" secondAttribute="bottom" constant="583" id="2h7-2k-C1v"/>
+                            <constraint firstItem="qt6-DF-lcP" firstAttribute="leading" secondItem="aXP-se-3Oo" secondAttribute="leading" constant="20" id="4uT-85-BFy"/>
+                            <constraint firstItem="w96-vZ-sZK" firstAttribute="leading" secondItem="aXP-se-3Oo" secondAttribute="leading" constant="20" id="BSj-ov-Gxz"/>
+                            <constraint firstItem="Ena-8j-xk7" firstAttribute="top" secondItem="qt6-DF-lcP" secondAttribute="bottom" constant="4" id="Hpm-h4-Rca"/>
+                            <constraint firstItem="1UG-3p-xpM" firstAttribute="leading" secondItem="aXP-se-3Oo" secondAttribute="leading" constant="20" id="IWz-gF-usd"/>
+                            <constraint firstItem="FlR-rn-gVd" firstAttribute="top" secondItem="1UG-3p-xpM" secondAttribute="bottom" constant="8" id="S5M-tn-evo"/>
+                            <constraint firstItem="qt6-DF-lcP" firstAttribute="top" secondItem="w96-vZ-sZK" secondAttribute="bottom" constant="8" id="bOw-dz-XTr"/>
+                            <constraint firstItem="aXP-se-3Oo" firstAttribute="trailing" secondItem="FlR-rn-gVd" secondAttribute="trailing" constant="20" id="lzC-Ua-VDJ"/>
+                            <constraint firstItem="w96-vZ-sZK" firstAttribute="top" secondItem="aXP-se-3Oo" secondAttribute="top" constant="27" id="m7S-gq-QhF"/>
+                            <constraint firstItem="1UG-3p-xpM" firstAttribute="top" secondItem="Ena-8j-xk7" secondAttribute="bottom" constant="8" id="mCT-4m-cQ2"/>
+                            <constraint firstItem="Ena-8j-xk7" firstAttribute="leading" secondItem="aXP-se-3Oo" secondAttribute="leading" constant="20" id="nTg-Xp-XAQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aXP-se-3Oo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUc-o7-aqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2487" y="-145"/>
+        </scene>
+        <!--Cargas Autos-->
         <scene sceneID="j1B-Fx-xL3">
             <objects>
-                <viewController id="joN-YZ-ABt" sceneMemberID="viewController">
+                <viewController id="joN-YZ-ABt" customClass="CargasAutos" customModule="ProyectoSegundoParcialGasolinera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vPh-bZ-xyh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,7 +599,7 @@
                                     <constraint firstAttribute="height" constant="386" id="LMG-hg-MP1"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="64" id="eDl-Gj-l6s">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaCarga" rowHeight="64" id="eDl-Gj-l6s" customClass="CeldaCargasController" customModule="ProyectoSegundoParcialGasolinera" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDl-Gj-l6s" id="sZW-0o-1vP">
@@ -562,6 +629,10 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="tIB-Eg-0zO" secondAttribute="bottom" constant="6" id="r69-bu-5iJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbl_Costo" destination="tIB-Eg-0zO" id="4hr-0L-sCy"/>
+                                            <outlet property="lbl_litros" destination="VQp-yW-JXu" id="9xt-FN-qJt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -575,6 +646,9 @@
                                 <rect key="frame" x="274" y="469" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Agregar Carga"/>
+                                <connections>
+                                    <segue destination="fKE-ZV-RlE" kind="show" id="v4Z-M0-hVw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -612,6 +686,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9M1-En-8P2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="V5u-GH-un7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="7ZP-v9-F86">
+                            <connections>
+                                <action selector="editar_auto:" destination="joN-YZ-ABt" id="DbG-j9-n1h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tf_conductor" destination="NXn-5a-XpD" id="uC4-mk-Uhr"/>
+                        <outlet property="tf_fabricacion" destination="Eyb-F9-sxd" id="7Vp-Vt-Aea"/>
+                        <outlet property="tf_marca" destination="aMT-XG-6dx" id="btA-Nx-70Z"/>
+                        <outlet property="tf_modelo" destination="7Tm-z9-WTe" id="UgE-VF-P0O"/>
+                        <outlet property="tf_placa" destination="lqe-o1-Tdg" id="oIe-Fd-rCa"/>
+                        <outlet property="tv_CargasAutos" destination="DkZ-nd-DxE" id="8v5-lj-zDa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYx-Pb-r6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

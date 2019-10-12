@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     var Autos : [Auto] = []
     
+    var Fila : Int?
+    
     @IBOutlet weak var tv_Autos: UITableView!
     
     override func viewDidLoad() {
@@ -24,11 +26,14 @@ class ViewController: UIViewController {
     
     func createArray() -> [Auto]{
        var tempLista : [Auto] = []
-        let L1 = Auto(placa: "CCA-111", conductor: "Jorge Mario", marca: "KIA", modelo: "Forte", fabricacion: "2019")
-        let L2 = Auto(placa: "FFF-111", conductor: "Emiliano", marca: "Ford", modelo: "Lobo", fabricacion: "2019")
+    var tempCarga : [Carga] = []
+        tempCarga.append(Carga(cantidad: "5", litros: "10"))
+        //let L1 = Auto(placa: "CCA-111", conductor: "Jorge Mario", marca: "KIA", modelo: "Forte", fabricacion: "2019")
+        //let L2 = Auto(placa: "FFF-111", conductor: "Emiliano", marca: "Ford", modelo: "Lobo", fabricacion: "2019")
+        let L3 = Auto(placa: "CCA-111", conductor: "Jorge Mario", marca: "KIA", modelo: "Forte", fabricacion: "2019", Cargas: tempCarga)
         
-        tempLista.append(L1)
-        tempLista.append(L2)
+        tempLista.append(L3)
+        //tempLista.append(L2)
         
         return tempLista
     }
@@ -52,7 +57,29 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         return celda
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToNuevoAuto" {
+            let destino = segue.destination as? NuevoAutoCotroller
+            destino?.callbackAgregar = agregar
+        }
+        if segue.identifier == "goToCargas" {
+            let destino = segue.destination as? CargasAutos
+            destino?.Data = Autos[tv_Autos.indexPathForSelectedRow!.row]
+            let indexPath = tv_Autos.indexPath(for: (sender as? UITableViewCell)!)
+            let listDestination = Autos[indexPath!.row]
+            Fila = indexPath?.row
+            destino?.Data = listDestination
+            destino?.callbackEditAuto = editarTabla
+        }
+    }
+    func editarTabla(auto: Auto){
+        Autos[Fila!] = auto
+        tv_Autos.reloadData()
+    }
+    func agregar(auto : Auto){
+        Autos.append(auto)
+        tv_Autos.reloadData()
+    }
     
 }
 
