@@ -20,20 +20,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tv_Autos.dataSource = self
         tv_Autos.delegate = self
-        
+       
        Autos = createArray()
+        self.title = "Automóviles"
+        
+        
     }
     
     func createArray() -> [Auto]{
        var tempLista : [Auto] = []
     var tempCarga : [Carga] = []
         tempCarga.append(Carga(cantidad: "5", litros: "10"))
-        //let L1 = Auto(placa: "CCA-111", conductor: "Jorge Mario", marca: "KIA", modelo: "Forte", fabricacion: "2019")
-        //let L2 = Auto(placa: "FFF-111", conductor: "Emiliano", marca: "Ford", modelo: "Lobo", fabricacion: "2019")
-        let L3 = Auto(placa: "CCA-111", conductor: "Jorge Mario", marca: "KIA", modelo: "Forte", fabricacion: "2019", Cargas: tempCarga)
+        tempCarga.append(Carga(cantidad: "8", litros: "0"))
+        let L3 = Auto(placa: "CCA-111", conductor: "Jorge Mario", marca: "KIA", modelo: "Forte", fabricacion: "2019", Cargas : tempCarga, img_carro: "67994")
         
         tempLista.append(L3)
-        //tempLista.append(L2)
+       
         
         return tempLista
     }
@@ -66,8 +68,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             let destino = segue.destination as? CargasAutos
             destino?.Data = Autos[tv_Autos.indexPathForSelectedRow!.row]
             let indexPath = tv_Autos.indexPath(for: (sender as? UITableViewCell)!)
+            //destino?.createCargas(fila: Fila)
             let listDestination = Autos[indexPath!.row]
             Fila = indexPath?.row
+            destino?.Cargas = Autos[indexPath!.row].Cargas as! [Carga]
+            
             destino?.Data = listDestination
             destino?.callbackEditAuto = editarTabla
         }

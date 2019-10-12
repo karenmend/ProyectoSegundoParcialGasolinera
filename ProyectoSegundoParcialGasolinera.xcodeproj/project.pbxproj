@@ -10,6 +10,7 @@
 		3D02368F234E8A0900D0F121 /* Autos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02368E234E8A0900D0F121 /* Autos.swift */; };
 		3D023691234E8F6000D0F121 /* CeldaAutosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D023690234E8F6000D0F121 /* CeldaAutosController.swift */; };
 		3D023693234E992600D0F121 /* NuevoAutoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D023692234E992600D0F121 /* NuevoAutoController.swift */; };
+		3D0F2DA023524C6100CCAB1F /* NuevaCargaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F2D9F23524C6100CCAB1F /* NuevaCargaController.swift */; };
 		3D59CCA3235124E70017FECC /* CargasAutos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59CCA2235124E70017FECC /* CargasAutos.swift */; };
 		3D59CCA52351376D0017FECC /* Carga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59CCA42351376D0017FECC /* Carga.swift */; };
 		3D59CCA923513B370017FECC /* CeldaCargasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D59CCA823513B370017FECC /* CeldaCargasController.swift */; };
@@ -43,6 +44,7 @@
 		3D02368E234E8A0900D0F121 /* Autos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autos.swift; sourceTree = "<group>"; };
 		3D023690234E8F6000D0F121 /* CeldaAutosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAutosController.swift; sourceTree = "<group>"; };
 		3D023692234E992600D0F121 /* NuevoAutoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoAutoController.swift; sourceTree = "<group>"; };
+		3D0F2D9F23524C6100CCAB1F /* NuevaCargaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevaCargaController.swift; sourceTree = "<group>"; };
 		3D59CCA2235124E70017FECC /* CargasAutos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargasAutos.swift; sourceTree = "<group>"; };
 		3D59CCA42351376D0017FECC /* Carga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carga.swift; sourceTree = "<group>"; };
 		3D59CCA823513B370017FECC /* CeldaCargasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaCargasController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				3D59CCA2235124E70017FECC /* CargasAutos.swift */,
 				3D59CCA42351376D0017FECC /* Carga.swift */,
 				3D59CCA823513B370017FECC /* CeldaCargasController.swift */,
+				3D0F2D9F23524C6100CCAB1F /* NuevaCargaController.swift */,
 			);
 			path = ProyectoSegundoParcialGasolinera;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				3D70B06C234D24A1008574FD /* ViewController.swift in Sources */,
 				3D02368F234E8A0900D0F121 /* Autos.swift in Sources */,
+				3D0F2DA023524C6100CCAB1F /* NuevaCargaController.swift in Sources */,
 				3D023691234E8F6000D0F121 /* CeldaAutosController.swift in Sources */,
 				3D59CCA3235124E70017FECC /* CargasAutos.swift in Sources */,
 				3D59CCA923513B370017FECC /* CeldaCargasController.swift in Sources */,

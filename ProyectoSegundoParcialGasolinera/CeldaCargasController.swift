@@ -17,11 +17,11 @@ class CeldaCargasController: UITableViewCell {
         // Initialization code
     }
 
-    /*func set(Modelo: Auto){
-        let indexPath = IndexPath.init()
-        lbl_litros.text = Modelo.Cargas[indexPath.row]?.litros!
-        lbl_Costo.text = Modelo.Cargas[indexPath.row]?.cantidad!
+    func set(Modelo: Carga){
+        //let indexPath = IndexPath.init()
+        lbl_litros.text = "(" + Modelo.litros! + " litros)"
+        lbl_Costo.text = "$ " + Modelo.cantidad!
         
-    }*/
+    }
 
 }

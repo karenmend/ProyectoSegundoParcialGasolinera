@@ -15,9 +15,10 @@ class Auto{
     var modelo : String?
     var fabricacion : String?
     var Cargas : [Carga?] = []
+    var img_carro : String?
     
     
-    init (placa : String, conductor : String?, marca : String?, modelo : String?, fabricacion : String?, Cargas : [Carga?] = []){
+    init (placa : String, conductor : String?, marca : String?, modelo : String?, fabricacion : String?, Cargas : [Carga?] = [], img_carro : String?){
         self.placa = placa
         
         if let M_conductor = conductor{
@@ -34,6 +35,9 @@ class Auto{
         }
         if let M_Cargas : [Carga] = Cargas as? [Carga]{
         self.Cargas = M_Cargas
+        }
+        if let M_img_carro : String? = img_carro{
+            self.img_carro = M_img_carro
         }
     }
     

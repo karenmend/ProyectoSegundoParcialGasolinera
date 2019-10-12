@@ -20,13 +20,13 @@ class NuevoAutoCotroller : UIViewController{
     @IBOutlet weak var txt_placa: UITextField!
     
     @IBAction func doTapGuardar(_ sender: Any) {
-        let auto = Auto(placa: txt_placa.text!, conductor: txt_conductor.text! , marca: txt_marca.text! , modelo: txt_modelo.text!, fabricacion: txt_fabricacion.text!)
+        let auto = Auto(placa: txt_placa.text!, conductor: txt_conductor.text! , marca: txt_marca.text! , modelo: txt_modelo.text!, fabricacion: txt_fabricacion.text!, img_carro: "67994")
         callbackAgregar!(auto)
         self.navigationController?.popViewController(animated: true)
         
     }
     override func viewDidLoad() {
-        
+        self.title = "Nuevo auto"
     }
     
 }

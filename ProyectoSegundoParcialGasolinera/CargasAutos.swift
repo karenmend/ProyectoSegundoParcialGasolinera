@@ -11,12 +11,12 @@ import UIKit
 
 class CargasAutos : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    //var Cargas : [Carga] = []
+    var Cargas : [Carga] = []
     
     var Autos : [Auto] = []
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Autos.count
+        return Cargas.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -24,17 +24,17 @@ class CargasAutos : UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "celdaCarga") as? CeldaCargasController
-        //let list = Autos[indexPath.row]
-        
-        celda?.lbl_Costo.text = Autos[indexPath.row].Cargas[indexPath.row]?.cantidad
-        celda?.lbl_litros.text = Autos[indexPath.row].Cargas[indexPath.row]?.litros
-        
+        let list = Cargas[indexPath.row]
+        /*celda?.lbl_Costo.text = Data?.Cargas[lafila]?.cantidad
+        celda?.lbl_litros.text = Data?.Cargas[lafila]?.litros*/
+        celda?.set(Modelo : list)
         return celda!
         
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-                self.Autos.remove(at: indexPath.row)
+                self.Cargas.remove(at: indexPath.row)
+                self.Data?.Cargas.remove(at: indexPath.row)
                 self.tv_CargasAutos.reloadData()
         }
     }
@@ -50,7 +50,7 @@ class CargasAutos : UIViewController, UITableViewDelegate, UITableViewDataSource
             state = true
         }
         else{
-            let NuevoMode = Auto(placa: tf_placa.text!, conductor: tf_conductor.text, marca: tf_marca.text, modelo: tf_modelo.text , fabricacion: tf_fabricacion.text)
+            let NuevoMode = Auto(placa: tf_placa.text!, conductor: tf_conductor.text, marca: tf_marca.text, modelo: tf_modelo.text , fabricacion: tf_fabricacion.text, Cargas: Cargas, img_carro: "67994")
             callbackEditAuto!(NuevoMode)
             state = false
             navigationController?.popViewController(animated: true)
@@ -62,7 +62,7 @@ class CargasAutos : UIViewController, UITableViewDelegate, UITableViewDataSource
     var Data : Auto?
     var state : Bool?
     var callbackEditAuto : ((Auto) -> Void)?
-    
+   
     
     @IBOutlet weak var tf_fabricacion: UITextField!
     @IBOutlet weak var tf_modelo: UITextField!
@@ -72,6 +72,8 @@ class CargasAutos : UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = Data?.placa
         state = false
         
         tf_placa.text = Data?.placa
@@ -82,7 +84,26 @@ class CargasAutos : UIViewController, UITableViewDelegate, UITableViewDataSource
         
         tv_CargasAutos.dataSource = self
         tv_CargasAutos.delegate = self
+        //DEBUG
+        /*print(Data?.Cargas[lafila!]?.cantidad! ?? lafila!)
+        print(Data?.Cargas[lafila!]?.litros! ?? lafila!)
+        */
+       
 
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToNuevaCarga"{
+            let destino = segue.destination as? NuevaCargaController
+            destino?.callbackAgregarCarga = agregar
+            destino?.placa = Data?.placa
+            
+        }
+    }
+    
+    func  agregar(carga : Carga) {
+        Cargas.append(carga)
+        Data?.Cargas.append(carga)
+        tv_CargasAutos.reloadData()
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class CeldaAutosController : UITableViewCell {
 
+    @IBOutlet weak var img_carro: UIImageView!
     @IBOutlet weak var lbl_conductor: UILabel!
     @IBOutlet weak var lbl_fabricacion: UILabel!
     @IBOutlet weak var lbl_marca: UILabel!
@@ -20,11 +21,11 @@ class CeldaAutosController : UITableViewCell {
     }
     func set(Modelo : Auto){
         
-        lbl_marca.text = Modelo.marca
+        lbl_marca.text = Modelo.marca! + ", " + Modelo.modelo!
         lbl_fabricacion.text = Modelo.fabricacion
         lbl_conductor.text = Modelo.conductor
         lbl_placa.text = Modelo.placa
-        
+        img_carro.image = UIImage(named: Modelo.img_carro!)
     }
 
 
